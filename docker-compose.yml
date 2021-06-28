@@ -1,0 +1,8 @@
+version: "3" # docker-compose의 버전
+services: # 실행하려는 컨테이너들
+  redis-server: # redis-server라고 이름을 지은 것
+    image: "redis" # 컨테이너에서 사용하는 이미지
+  node-app:
+    build: . # 사용할 Dockerfile의 위치 ('.'은 현재 디렉토리)
+    ports: # port mapping
+      - "5000:4000" # local port : container port
